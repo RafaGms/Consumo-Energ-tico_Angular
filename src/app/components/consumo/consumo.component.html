@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="p-3">
+    <h1 class="text-center mt-4 mb-4 title">Consumo Energético</h1>
+    <div class="row">
+      <p class="text-danger text-center">{{errorMessage}}</p>
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <label for="residents">Tamanho de sua família:</label>
+        <input type="number" name="residents" class="form-control" placeholder="0" [(ngModel)]="residentes" required>
+      </div>
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <label for="washing-machine">Tem máquina de lavar?</label>
+        <select name="washing-machine" class="form-select" [(ngModel)]="inputMaquina" required>
+          <option value="false">Não</option>
+          <option value="true">Sim</option>
+        </select>
+      </div>
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <label for="dryer">Tem secadora de roupas?</label>
+        <select name="dryer" class="form-select" [(ngModel)]="inputSecadora" required>
+          <option value="false">Não</option>
+          <option value="true">Sim</option>
+        </select>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <label for="rooms">Quantidade de cômodos:</label>
+        <input type="number" name="rooms" class="form-control" placeholder="0" [(ngModel)]="comodos" required>
+      </div>
+
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <label for="tvs">Quantidade de TV's:</label>
+        <input type="number" name="residents" class="form-control" placeholder="0" [(ngModel)]="tvs" required>
+      </div>
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <label for="pcs">Quantidade de computadores:</label>
+        <input type="number" name="residents" class="form-control" placeholder="0" [(ngModel)]="pcs" required>
+      </div>
+      <div class="col-12">
+        <label for="pricePerHour">Valor da tarifa energética:</label>
+        <input type="number" name="pricePerHour" class="form-control" placeholder="0" [(ngModel)]="precoHora" required>
+      </div>
+      <h6 class="text-muted mt-4 mb-4">OBS: Cálculos baseados em pesquisas diárias da média de consumo dos aparelhos.</h6>
+    </div>
+
+    <div class="col-12 d-flex justify-content-center">
+      <button type="button" class="btn btn-secondary" (click)="validateInputs()">Calcular</button>
+    </div>
+
+    <div class="col-12 d-flex justify-content-center">
+      <h5 [innerHTML]="result" class="mt-4 mb-4"></h5>
+    </div>
+  </div>
+</div>
